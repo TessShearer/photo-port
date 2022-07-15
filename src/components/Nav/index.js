@@ -21,12 +21,16 @@ function Nav(props) {
             </h2>
             <nav>
                 <ul className="flex-row">
-                    <li className="mx-2">
+                    <li
+                        className={`mx-1 ${currentCategory.name === category.name && !contactSelected && `navActive`
+                            }`}
+                        key={category.name}
+                    >
                         <a data-testid="about" href="#about">
                             About me
                         </a>
                     </li>
-                    <li className="mx-2">
+                    <li className={`mx-2 ${contactSelected && 'navActive'}`}>
                         <span>Contact</span>
                     </li>
                     {categories.map((category) => (
